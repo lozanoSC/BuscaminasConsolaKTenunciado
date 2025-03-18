@@ -1,27 +1,25 @@
 # BuscaminasConsolaKTenunciado
 
-# BuscaminasEnunciadoKT
-## Se Pide hay que actualizar dibujo y estructura
 - Nombre de proyecto: BuscaMinas
-- Separar el interface de usuario de la lógica del juego.  Habrá dos paquetes. Uno se llamará principal y contiene la clase InterfaceConsola que contiene el main() . El otro se llamará buscaminas y contendrá la clase BuscaMinas que controlan la lógica del juego. 
-
-![image.png](./image.png)
-
-
-- La clase InterfaceConsola puedes hacerla sencillita para no gastar tiempo con la E/S. Si te apetece hacerla compleja ¡no problem!
-- En la clase BuscaMinas todo private excepto lo que se requiera expresamente public. 
-- Hay que cumplir en la clase BuscaMinas el principio de ocultación tanto para tipos primitivos como para referencias.
-- Generar javadoc para la clase BuscaMinas de forma que leyendo la ayuda de los métodos públicos otro programador que quiera hacer otra Interface, pueda manejar tu clase sin necesidad de leer el código java de tu clase. Esfuérzate en diseñar una parte pública compresible para otros. Recuerda que casi siempre "se escribe el código para otros".
-- El proyecto, además de por supuesto el código fuente, contiene  también un jar ejecutable 
-
-## Algunas ideas para escribir las clase BuscaMinas
-
-
-- Utilizar dos matrices paralelas. Una almacena de cada casilla un número de 0-9 y la otra almacena de cada casilla si está destapada o no. La posibilidad de marcar una casilla como sospechosa de mina (la banderita del juego gráfico) puedes olvidarte de ella para simplificar tu código. No es obligatorio en absoluto que uséis matrices paralelas. Hay otros enfoques, por ejemplo usar una única matriz donde cada elemento sea de la clase Celda que será un objeto con dos campos, uno para almacenar valor y otro estado(tapado/destapado). Y hay muchos otros enfoques. Pero dicho esto, trabajar con dos matrices paralelas está bien.
-
-- cómo calcular las adyacencias. Repasa los boletínes de arrays multidimensionales si no recuerdas o no dominas el concepto.
-
-- destapar una casilla con valor 0 =>hacer un destapado recursivo. Si una celda vale 0 entonces tengo que ir mirando “alrededor” si puedo destapar sus posibles 8 vecinas.
-- avanza progresivamente. Primero tienes que estar seguro que genera bien el tablero inicial con las minas, luego puedes empezar a programar el juego comprobando que destapa correctamente, funciona y termina el juego correctamente, añadimos la posibilidad de marcar una celda como sospechosa de mina, ...
-- aplica todo lo que aprendiste con la tarea de SieteYMedia para estar seguro que separas la capa de presentación de los datos de la capa de la lógica del juego
-- comprueba que cumple el principio de ocultación.
+  ![image.png](./image.png)
+- Separar la lógica de pressentación de la lógica de negocio(dos capas
+- Main.kt contendrá main() y todas las funciones que consideres necesarias para la interacción con el usuario.
+- Main.kt no puede manipular directamente la modificación del tablero, existirá una función destapar(fila,columna) o similar pero no puede modificar directamente el tablero de juego
+- Main.kt puede:
+    - ordenar destapar una celda
+    - leer el tablero, por ejemplo para imprimir, pero no puede modificar
+    - consultar información de lectura como por ejemplo saber el estado del juego (finalizado o no, etc.)
+- Por lo tanto, las clase/clases de Buscaminas.kt deben de cumplir el principio de ocultación de forma que que desde Main.kt sólo se puede modificar la información a través de las funciones públicas que ofrezcan las clases de Buscaminas.kt
+- Buscaminas.kt al menos debe de contener una clase que se llame Buscaminas
+- La clase Buscaminas se encarga de crear y gestionar el tablero de juego
+- En esta versión de buscaminas se debe permitir colocar banderas (flags)
+- El tablero de juego se puede implementar de muchas formas
+  - Una matriz de enteros donde cada entero es un código que representa el estado de la celda
+  - tres matrices paralelas para almacenar respectivamente valor, tapada/destapada, bandera/no bandera
+  - Una única matriz donde cada celda es un objeto de clase Celda o similar que guarda la información de estado de una celda. Intenta usar ésta, es la más estructurada.
+  - otros  
+- Las dimensiones del tablero y la cantidad de minas debe ser configurable.
+- La clase Buscaminas debe enviar excepción:
+  -   Si el número de filas y/o columnas es <1 
+  -   Si el número de minas es igual o mayor que el número de celdas del tablero debe enviar excepción
+    
