@@ -4,17 +4,17 @@
   
   ![estructuraproyecto.png](./estructuraproyecto.png)
   
-- Separar la lógica de pressentación de la lógica de negocio(dos capas
+- Separar la lógica de presentación de la lógica de negocio(dos capas)
 - Main.kt contendrá main() y todas las funciones que consideres necesarias para la interacción con el usuario.
-- Main.kt no puede manipular directamente la modificación del tablero, existirá una función destapar(fila,columna) o similar pero no puede modificar directamente el tablero de juego
+- Main.kt no puede manipular directamente la modificación del tablero
 - Main.kt puede:
-    - ordenar destapar una celda
-    - leer el tablero, por ejemplo para imprimir, pero no puede modificar
-    - consultar información de lectura como por ejemplo saber el estado del juego (finalizado o no, etc.)
-- Por lo tanto, las clase/clases de Buscaminas.kt deben de cumplir el principio de ocultación de forma que que desde Main.kt sólo se puede modificar la información a través de las funciones públicas que ofrezcan las clases de Buscaminas.kt
-- Buscaminas.kt al menos debe de contener una clase que se llame Buscaminas
+    - ordenar destapar una celda. , podra utilizar una función publica de la clase Buscaminas destapar(fila,columna) o similar pero no puede modificar directamente el tablero de juego
+    - leer el tablero, por ejemplo para imprimir, pero no puede modificarlo salvo a través de destapar()
+    - consultar información de sólo lectura como por ejemplo saber el estado del juego (finalizado o no, etc.)
+- Por lo tanto, de lo anterior se desprende que las clase/clases de Buscaminas.kt **deben de cumplir el principio de ocultación** de forma que que desde Main.kt sólo se puede modificar la información a través de las funciones públicas que ofrezcan las clases de Buscaminas.kt
+- Buscaminas.kt al menos debe de contener una clase que se llame Buscaminas y otras clases y/o funciones si lo consideras oportuno.
 - La clase Buscaminas se encarga de crear y gestionar el tablero de juego
-- En esta versión de buscaminas se debe permitir colocar banderas (flags)
+- En esta versión de buscaminas se debe permitir colocar banderas (flags). Como en el juego original sólo se permiten colocar banderas en las casillas tapadas.
 - El tablero de juego se puede implementar de muchas formas
   - Una matriz de enteros donde cada entero es un código que representa el estado de la celda
   - tres matrices paralelas para almacenar respectivamente valor, tapada/destapada, bandera/no bandera
