@@ -4,7 +4,7 @@
   
   ![estructuraproyecto.png](./estructuraproyecto.png)
   
-- Separar la lógica de presentación de la lógica de negocio(dos capas)
+- Separar la lógica de presentación de la lógica de negocio(dos capas). Ten encuenta que el código de Buscaminas.kt lo reutilizarás para hacer una versión gráfica de Buscaminas.
 - Main.kt contendrá main() y todas las funciones que consideres necesarias para la interacción con el usuario.
 - Main.kt no puede manipular directamente la modificación del tablero
 - Main.kt puede:
