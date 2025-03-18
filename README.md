@@ -1,7 +1,9 @@
 # BuscaminasConsolaKTenunciado
 
 - Nombre de proyecto: BuscaMinas
-  ![image.png](./image.png)
+  
+  ![estructuraproyecto.png](./estructuraproyecto.png)
+  
 - Separar la lógica de pressentación de la lógica de negocio(dos capas
 - Main.kt contendrá main() y todas las funciones que consideres necesarias para la interacción con el usuario.
 - Main.kt no puede manipular directamente la modificación del tablero, existirá una función destapar(fila,columna) o similar pero no puede modificar directamente el tablero de juego
