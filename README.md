@@ -1,5 +1,6 @@
 # BuscaminasConsolaKTenunciado
-
+- Se trata de escribir un buscaminas en kotlin. Estate atento a cumplir los requisitos pedidos.
+- Es uno de los juegos más famosos de la historia de los videojuegos. Si no sabes jugar al buscaminas busca cualquier página web que te permita jugar y que te explique las normas del juego
 - Nombre de proyecto: BuscaMinas
   
   ![estructuraproyecto.png](./estructuraproyecto.png)
