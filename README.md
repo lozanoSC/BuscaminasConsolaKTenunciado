@@ -30,3 +30,5 @@
 - hay separación de lógica de juego y lógica de presentación
 - BuscaMinas oculta el tablero. Desde main solo se puede modificar el tablero con la función pública de destapar
 - Se lanzan las excepciones indicadas
+
+**TEN EN CUENTA:** Tendrás que reutilizar tu clase BuscaMinas, sin modificarla,  para hacer una interface Compose en la próxima práctica.
