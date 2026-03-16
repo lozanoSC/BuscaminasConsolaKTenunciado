@@ -26,3 +26,7 @@
   -   Si el número de filas y/o columnas es <1 
   -   Si el número de minas es igual o mayor que el número de celdas del tablero debe enviar excepción
     
+## Para verificar que tu práctica está correcta:
+- hay separación de lógica de juego y lógica de presentación
+- BuscaMinas oculta el tablero. Desde main solo se puede modificar el tablero con la función pública de destapar
+- Se lanzan las excepciones indicadas
